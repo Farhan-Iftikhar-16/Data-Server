@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div>
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="content-container">
+    <input type="file" (change)="uploadFile($event)">
+
+    <p *ngIf="items && items.length === 0">Welcome {{user?.firstName}} Seems like you don't have any documents created or opened. Please create one using
+      button in top left corner or open one that you would like to read or edit!</p>
+
+    <div *ngIf="selectedFile">
+      <h4>Editing: {{selectedFile?.name}}</h4>
+
+      <p-editor [(ngModel)]="selectedFile.content" [style]="{height: '280px'}"></p-editor>
+
+      <p-button  [label]="'Save Content'" class="p-button-primary mt-2" (click)="onSaveFileContent()"></p-button>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+<p-progressSpinner *ngIf="showLoader"></p-progressSpinner>

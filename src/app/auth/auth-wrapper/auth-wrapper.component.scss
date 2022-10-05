@@ -1,0 +1,39 @@
+.auth-wrapper-container {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > div {
+    width: 100%;
+  }
+}
+
+:host::ng-deep {
+  p-password {
+    div  {
+      position: relative;
+      width: 100%;
+      display: inline-block !important;
+
+      input {
+        width: 100%;
+      }
+
+      i {
+        position: absolute;
+        top: 25px;
+        margin-top: -0.5rem;
+      }
+
+      i:last-of-type {
+        right: 0.75rem;
+        color: #6c757d;
+      }
+    }
+  }
+}

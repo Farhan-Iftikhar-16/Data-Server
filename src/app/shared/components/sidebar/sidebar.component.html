@@ -1,0 +1,50 @@
+<div class="sidebar-container">
+  <div class="d-flex justify-content-between px-2">
+    <input placeholder="Search" class="search-input" type="text" [(ngModel)]="searchText" pInputText>
+    <p-button [label]="'Search'" class="p-button-primary" (click)="searchItems()"></p-button>
+  </div>
+
+<!--  <h5>All CATEGORIES</h5>-->
+<!--  <h6>CATEGORIES & ARTICLES</h6>-->
+
+  <div class="sidebar-menu-container">
+    <div class="d-flex justify-content-end align-items-baseline px-1" style="height: 25px; overflow: hidden">
+      <div class="add-folder me-2" (click)="isNewFolder = true; showAddFolderOrFileDialog = true">
+        <i class="fa fa-folder"></i>
+        <i class="fa fa-plus"></i>
+      </div>
+      <div class="add-file" (click)="isNewFolder = false; showAddFolderOrFileDialog = true">
+        <i class="fa fa-file"></i>
+        <i class="fa fa-plus"></i>
+      </div>
+    </div>
+
+    <p-tree *ngIf="items && items.length > 0" [value]="items" selectionMode="single" [(selection)]="selectedFolderOrFile" [draggableNodes]="true" [droppableNodes]="true"
+            draggableScope="self" droppableScope="self" [contextMenu]="cm">
+      <ng-template let-node pTemplate="default">
+        <span>{{node.label}}</span>
+        <div class="d-flex flex-column justify-content-start align-items-start">
+          <span style="font-size: 8px !important;">Created By: {{node?.data?.createdBy}}</span>
+          <span style="font-size: 8px !important;">Created At: {{node?.data.createdAt | date:'d-MMM-YYYY h:mm a'}}</span>
+          <span style="font-size: 8px !important;">Updated At: {{node?.data.updatedAt | date:'d-MMM-YYYY h:mm a'}}</span>
+        </div>
+      </ng-template>
+    </p-tree>
+
+    <p-contextMenu #cm [model]="contextMenu"></p-contextMenu>
+  </div>
+</div>
+
+<app-add-folder-or-file-dialog *ngIf="showAddFolderOrFileDialog" [user]="user" [isFolder]="isNewFolder" [selectedFolderOrFile]="selectedFolderOrFile ? selectedFolderOrFile.data : null" (hideAddFolderOrFileDialog)="showAddFolderOrFileDialog = false; this.getListOfFoldersAndFiles()"></app-add-folder-or-file-dialog>
+
+<p-dialog class="select-users-dialog" *ngIf="showShareFoldersOrFilesDialog" (onHide)="showShareFoldersOrFilesDialog = false; selectedUsers = []" [(visible)]="showShareFoldersOrFilesDialog" [header]="'Share Folder(s) Or File(s)'" [modal]="true" [resizable]="false" [draggable]="false" [dismissableMask]="true" [style]="{width: '40vw'}">
+  <div>
+    <p-autoComplete [(ngModel)]="selectedUsers" field="name" [suggestions]="users" [multiple]="true" (completeMethod)="searchUsers($event)"></p-autoComplete>
+
+    <div class="d-flex justify-content-end align-items-center mt-3">
+      <p-button class="p-button-primary" (click)="onSaveClicked()" [label]="'Save'"></p-button>
+    </div>
+  </div>
+</p-dialog>
+
+<p-progressSpinner *ngIf="showLoader"></p-progressSpinner>

@@ -1,0 +1,20 @@
+:host::ng-deep {
+  .search-input {
+    padding: 6.5px 15px !important;
+    margin-right: 10px;
+  }
+
+  .content-container {
+    position: fixed;
+    top: 70px;
+    left: 280px;
+    height: 100%;
+    min-height: 100vh;
+    width: calc(100% - 280px);
+    padding: 20px;
+  }
+
+  .p-editor-container {
+    margin-bottom: 20px !important;
+  }
+}

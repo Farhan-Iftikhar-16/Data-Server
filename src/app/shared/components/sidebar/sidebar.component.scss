@@ -1,0 +1,237 @@
+.sidebar-container {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  height: 100%;
+  min-height: 100vh;
+  width: 280px;
+  background-color: #333;
+  color: #6c757d !important;
+  padding: 20px 0;
+
+  h5, h6 {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 5px 1.25rem;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    margin: 0;
+  }
+
+  h6 {
+    font-size: 0.8rem;
+  }
+
+  .search-input {
+    width: 60% !important;
+  }
+
+  .sidebar-menu-container {
+    height: calc(100% - 170px);
+    overflow: auto;
+    margin-top: 20px;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      a {
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.5;
+          color: #FFFFFF;
+        }
+
+        .fa-caret-down {
+          display: block;
+        }
+
+        .fa-caret-up {
+          display: none;
+        }
+      }
+
+      .menu-item {
+      }
+
+      .sub-menu-items-container {
+        display: none;
+
+        .menu-item {
+          padding-left: 40px;
+        }
+      }
+    }
+
+    li:hover {
+      background-color: #1d2124!important;
+    }
+
+    li.show-sub-menu {
+      .sub-menu-items-container {
+        display: flex !important;
+      }
+
+      a {
+        .fa-caret-down {
+          display: none;
+        }
+
+        .fa-caret-up {
+          display: block;
+        }
+      }
+    }
+
+  }
+}
+
+.add-folder {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  top: 5px;
+  cursor: pointer;
+
+  .fa-folder {
+    font-size: 25px;
+    height: 25px;
+    width: 25px;
+  }
+
+  .fa-plus {
+    font-size: 7px;
+    height: 7px;
+    width: 7px;
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    color: white;
+  }
+}
+
+.add-file {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  top: 7px;
+  cursor: pointer;
+
+  .fa-file {
+    font-size: 25px;
+    height: 25px;
+    width: 25px;
+  }
+
+  .fa-plus {
+    font-size: 7px;
+    height: 7px;
+    width: 7px;
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    color: white;
+  }
+}
+
+:host::ng-deep{
+  .p-tree {
+    border: unset !important;
+    border-radius: 0 !important;
+    background: #343a40 !important;
+    padding: 0 !important;
+
+    .p-tree-container {
+      .p-treenode-droppoint {
+        height: 0 !important;
+      }
+
+      .p-treenode {
+        padding: 0 !important;
+
+        .p-treenode-content {
+          position: relative;
+          padding: 13px;
+          border-radius: unset !important;
+          border-bottom: 1px solid rgba(0,0,0,.125) !important;
+
+          span {
+            font-size: 1rem !important;
+            font-weight: 400 !important;
+            line-height: 1.5 !important;
+            color: #FFFFFF !important;
+          }
+
+          .p-tree-toggler {
+            position: absolute;
+            right: 5px;
+
+            .p-tree-toggler-icon.pi-chevron-right::before {
+              display: inline;
+              text-align: right;
+              padding-left: 10px;
+              font-size: 10px !important;
+            }
+
+            .p-tree-toggler-icon.pi-chevron-down::before {
+              display: inline;
+              text-align: right;
+              padding-left: 10px;
+              font-size: 10px !important;
+            }
+          }
+
+          .p-tree-toggler:hover {
+            background: unset !important;
+          }
+
+          .p-tree-toggler:focus {
+            outline: unset !important;
+            box-shadow: unset !important;
+          }
+
+          .p-treenode-icon {
+            margin-right: 20px !important;
+          }
+        }
+
+        .p-treenode-content.p-highlight {
+          background: #343a40 !important;
+        }
+
+        .p-treenode-content:hover {
+          background: #343a40 !important;
+        }
+      }
+    }
+
+    .p-treenode-children {
+      padding: 0 !important;
+
+      .p-treenode .p-treenode-content {
+        padding-left: 35px !important;
+      }
+    }
+  }
+
+  .p-autocomplete  {
+    width: 100% !important;
+
+    .p-autocomplete-multiple-container {
+      width: 100% !important;
+    }
+  }
+
+  p-dialog.select-users-dialog .p-dialog-content {
+    overflow-y: visible !important;
+  }
+}

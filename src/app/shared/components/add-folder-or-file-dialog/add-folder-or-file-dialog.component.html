@@ -1,0 +1,11 @@
+<p-dialog class="upload-images-dialog" (onHide)="onCloseClicked()" [(visible)]="showDialog" [header]="isFolder ? 'Enter Folder Name' : 'Enter File Name'" [modal]="true" [resizable]="false" [draggable]="false" [dismissableMask]="true" [style]="{width: '40vw'}">
+  <div>
+    <input pInputText placeholder="name" [(ngModel)]="folderOrFileName" name="folder-or-file-name" class="w-100">
+  </div>
+
+
+  <ng-template pTemplate="footer">
+    <p-button class="p-button-secondary" (click)="onCloseClicked()" [label]="'Close'"></p-button>
+    <p-button class="p-button-primary" (click)="onSaveClicked()" [label]="'Save'"></p-button>
+  </ng-template>
+</p-dialog>

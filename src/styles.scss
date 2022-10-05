@@ -1,0 +1,114 @@
+/* You can add global styles to this file, and also import other style files */
+
+.form-group {
+  app-form-control label {
+    display: block !important;
+  }
+
+  input, .p-dropdown, .p-calendar, textarea {
+    width: 100% !important;
+  }
+}
+
+input:enabled:focus, textarea:enabled:focus, .p-dropdown:not(p-disabled).p-focus {
+  box-shadow: none !important;
+  border-color: #007bff !important;
+}
+
+input:enabled:hover, textarea:enabled:hover, .p-dropdown:not(p-disabled):hover {
+  box-shadow: none !important;
+  border-color: #007bff !important;
+}
+
+.p-button-primary .p-button {
+  background: #007bff !important;
+  color: #ffffff !important;
+  border-color: #007bff !important;
+  padding: 0.4rem 1.25rem !important;
+
+  .p-button-label {
+    font-weight: 400 !important;
+  }
+}
+
+.p-button-primary .p-button:enabled:hover {
+  background: #007bff !important;
+  color: #ffffff !important;
+  border-color: #007bff !important;
+}
+
+.p-button-secondary .p-button {
+  background: #6c757d !important;
+  color: #ffffff !important;
+  border-color: #6c757d !important;
+  padding: 0.4rem 1.25rem !important;
+
+  .p-button-label {
+    font-weight: 400 !important;
+  }
+}
+
+.p-button-secondary .p-button:enabled:hover {
+  background: #5a6268 !important;
+  color: #ffffff !important;
+  border-color: #5a6268 !important;
+}
+
+.p-button-success .p-button {
+  background: #28a745 !important;
+  color: #ffffff !important;
+  border-color: #28a745 !important;
+  padding: 0.4rem 1.25rem !important;
+
+  .p-button-label {
+    font-weight: 400 !important;
+  }
+}
+
+.p-button-success .p-button:enabled:hover {
+  background: #218838 !important;
+  color: #ffffff !important;
+  border-color: #218838 !important;
+}
+
+.p-button-teritory .p-button {
+  background: transparent !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  padding: 0 !important;
+
+  .p-button-label {
+    font-weight: 400 !important;
+  }
+}
+
+.p-button-teritory .p-button:enabled:hover {
+  background: transparent !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+.p-button:focus {
+  outline: unset !important;
+  box-shadow: none !important;
+}
+
+.p-overlaypanel .p-overlaypanel-content {
+  padding: 13px 20px !important;
+}
+
+.p-overlaypanel::before, .p-overlaypanel::after {
+  display: none !important;
+}
+
+.p-progress-spinner {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 100vh !important;
+}
