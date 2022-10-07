@@ -53,7 +53,7 @@ export class ApiService {
 
   testing(file): Observable<any> {
     let formData = new FormData();
-    formData.set('name', file);
-    return this.httpClient.post(`http://localhost:4000/testing-s3`, formData);
+    formData.set('file', file);
+    return this.httpClient.post(`${this.apiURL}testing-s3`, formData);
   }
 }

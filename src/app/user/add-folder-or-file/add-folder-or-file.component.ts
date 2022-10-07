@@ -41,25 +41,11 @@ export class AddFolderOrFileComponent implements OnInit {
   }
 
   uploadFile(event): void {
-    const file = event.target.files[0];
+    const file: File = event.target.files[0];
 
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload =  () => {
-      this.upload(reader.result);
-    };
-    reader.onerror = function (error) {
-      console.log('Error: ', error);
-    };
-
-
-
-  }
-
-  upload(response): void {
-    this.apiService.testing(response).subscribe(response => {
+    this.apiService.testing(file).subscribe(response => {
       console.log(response);
-    })
+    });
   }
 
   onSaveFileContent(): void {
