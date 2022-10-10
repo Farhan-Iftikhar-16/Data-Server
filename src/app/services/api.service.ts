@@ -50,10 +50,4 @@ export class ApiService {
   searchUsers(id, query): Observable<any> {
     return this.httpClient.get(`${this.apiURL}accounts/searchUsers/${id}/${query}`);
   }
-
-  testing(file): Observable<any> {
-    let formData = new FormData();
-    formData.set('file', file);
-    return this.httpClient.post(`${this.apiURL}testing-s3`, formData);
-  }
 }

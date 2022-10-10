@@ -26,7 +26,6 @@ export class AddFolderOrFileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     if (localStorage.getItem('user')) {
       this.user = JSON.parse(localStorage.getItem('user'));
     }
@@ -37,14 +36,6 @@ export class AddFolderOrFileComponent implements OnInit {
 
     this.commonService.sendFoldersOrFiles.pipe(takeUntil(this.componentInView)).subscribe((response: any) => {
       this.items = response;
-    });
-  }
-
-  uploadFile(event): void {
-    const file: File = event.target.files[0];
-
-    this.apiService.testing(file).subscribe(response => {
-      console.log(response);
     });
   }
 

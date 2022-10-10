@@ -97,47 +97,42 @@
 
 .add-folder {
   position: relative;
-  height: 25px;
-  width: 25px;
-  top: 5px;
+  top: 4.1px;
   cursor: pointer;
 
   .fa-folder {
-    font-size: 25px;
-    height: 25px;
-    width: 25px;
+    font-size: 35px;
+    height: 35px;
+    width: 35px;
   }
 
   .fa-plus {
-    font-size: 7px;
-    height: 7px;
-    width: 7px;
+    font-size: 10px;
+    height: 10px;
+    width: 10px;
     position: absolute;
-    top: 12px;
-    left: 8px;
+    top: 14px;
+    left: 12px;
     color: white;
   }
 }
 
 .add-file {
   position: relative;
-  height: 25px;
-  width: 25px;
-  top: 7px;
   cursor: pointer;
 
   .fa-file {
-    font-size: 25px;
-    height: 25px;
-    width: 25px;
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
   }
 
   .fa-plus {
-    font-size: 7px;
-    height: 7px;
-    width: 7px;
+    font-size: 10px;
+    height: 10px;
+    width: 10px;
     position: absolute;
-    top: 10px;
+    top: 14px;
     left: 8px;
     color: white;
   }

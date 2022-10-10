@@ -4,8 +4,6 @@
   </div>
 
   <div class="content-container">
-    <input type="file" (change)="uploadFile($event)">
-
     <p *ngIf="items && items.length === 0">Welcome {{user?.firstName}} Seems like you don't have any documents created or opened. Please create one using
       button in top left corner or open one that you would like to read or edit!</p>
 
