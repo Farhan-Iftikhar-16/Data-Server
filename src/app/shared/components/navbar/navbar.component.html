@@ -16,6 +16,8 @@
           <span class="pi pi-angle-down ms-2" (click)="op.toggle($event)"></span>
           <p-overlayPanel #op>
             <ng-template pTemplate>
+              <span style="cursor: pointer" (click)="onBackupClicked()">Backup</span>
+              <br>
               <span style="cursor: pointer" (click)="onLogoutClick()">Logout</span>
             </ng-template>
           </p-overlayPanel>

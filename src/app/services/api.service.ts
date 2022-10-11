@@ -23,6 +23,10 @@ export class ApiService {
     return this.httpClient.post(`${this.apiURL}accounts/signup`, params);
   }
 
+  createBackup(): Observable<any> {
+    return this.httpClient.post(`${this.apiURL}backup`, null);
+  }
+
   logout(id): Observable<any> {
     return this.httpClient.get(`${this.apiURL}logout/${id}`);
   }

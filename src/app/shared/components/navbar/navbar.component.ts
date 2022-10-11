@@ -30,6 +30,18 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  onBackupClicked(): void {
+    this.showLoader = true;
+
+    this.apiService.createBackup().pipe(takeUntil(this.componentInView)).subscribe(() => {
+      this.showLoader = false;
+      this.toastService.success('Backup created successfully');
+    }, error => {
+      this.showLoader = false;
+      this.toastService.error(error.error.message);
+    });
+  }
+
   onLogoutClick(): void {
     this.showLoader = true;
 
@@ -42,4 +54,6 @@ export class NavbarComponent implements OnInit {
       this.toastService.error(error.error.message);
     });
   }
+
+
 }
